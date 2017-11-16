@@ -31,7 +31,12 @@ function mainCtrl ($scope, giftFetch){
 			$scope.gifts = data
 		})
 		$scope.addGift = function(){
-			var formData = {Item:$scope.Item,Image:$scope.Url};
+			var url = $scope.Url;	
+			console.log("url: " + url);
+			if(typeof url == "undefined"){ url ="https://americannegotiationinstitute.com/wp-content/uploads/2016/12/gift-06.jpg"} 
+			if(url == ""){url ="https://americannegotiationinstitute.com/wp-content/uploads/2016/12/gift-06.jpg"}
+			console.log("url: " + url);
+			var formData = {Item:$scope.Item,Image:url};
 			console.log(formData);
 			giftFetch.post(formData);
 			$scope.gifts.push(formData);
