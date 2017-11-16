@@ -36,4 +36,11 @@ function mainCtrl ($scope, giftFetch){
 			giftFetch.post(formData);
 			$scope.gifts.push(formData);
 		}
+	$scope.delete = function(comment) {
+	$http.delete('/comments/' + comment._id )
+		.success(function(data){
+			console.log("delete worked");
+		});
+	$scope.getAll();
+	};
 }
