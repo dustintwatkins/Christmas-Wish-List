@@ -4,6 +4,7 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
 <script src = "./javascripts/frontapp.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" type ="text/css" href="main.css">
 <meta charset="utf-8">
 <title>Christmas wish list</title>
@@ -20,7 +21,7 @@
 
 		<ul ng-if='gifts.length' class= 'list center stretch'>
 			<li ng-repeat='g in gifts' class = 'gifts'>
-				<h1 class = list> {{g.Item}}</h1>
+				<h1 class = list><span class = "glyphicon glyphicon-remove" ng-click="delete(g)"></span> {{g.Item}}</h1>
 				<img class = 'avatar' ng-src="{{g.Image}}"/>
 			</li>
 		</ul>	

@@ -5,7 +5,8 @@ html, body, #app {
   margin: 0;
   font-family: helvetica;
   background-image: url("https://wallpapersite.com/images/wallpapers/merry-christmas-2560x1600-santa-claus-snowman-hd-3806.jpg");
-  background-size:100%;
+  background-size:cover;
+  background-position:center center;
   background-repeat: no-repeat;
   background-atachment:;
 }
@@ -40,7 +41,11 @@ div, ul{
 }
 
 .center{
-	display: inline-flex;	
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;	
+		
 }
 
 .gifts{

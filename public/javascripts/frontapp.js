@@ -36,8 +36,9 @@ function mainCtrl ($scope, giftFetch){
 			giftFetch.post(formData);
 			$scope.gifts.push(formData);
 		}
-	$scope.delete = function(comment) {
-	$http.delete('/comments/' + comment._id )
+	$scope.delete = function(gift) {
+	console.log("entered delete");
+	$http.delete('/comments/' + gift._id )
 		.success(function(data){
 			console.log("delete worked");
 		});
