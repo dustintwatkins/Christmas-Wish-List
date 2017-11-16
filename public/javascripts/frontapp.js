@@ -40,13 +40,19 @@ function mainCtrl ($scope, giftFetch){
 			console.log(formData);
 			giftFetch.post(formData);
 			$scope.gifts.push(formData);
-		}
-	$scope.delete = function(gift) {
-	console.log("entered delete");
-	$http.delete('/comments/' + gift._id )
-		.success(function(data){
-			console.log("delete worked");
+		};
+	$scope.getAll = function() {
+		return $http.get('/comments').success(function(data){
+		angular.copy(data, $scope.comments);
 		});
+	};
 	$scope.getAll();
+	$scope.delete = function(gift) {
+		console.log("entered delete");
+		$http.delete('/comments/' + gift._id )
+			.success(function(data){
+				console.log("delete worked");
+	$scope.getAll();
+		});
 	};
 }
