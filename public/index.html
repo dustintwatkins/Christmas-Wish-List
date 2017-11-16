@@ -1,0 +1,32 @@
+<!DOCTYPE HTM>
+
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+<script src = "./javascripts/frontapp.js"></script>
+<meta charset="utf-8">
+<title>Christmas wish list</title>
+</head>
+
+<body>
+	<h1>Hello what do you want for Christmas? :)</h1>
+	<div id ='app' ng-app='app' ng-controller='mainCtrl'>
+		<h1>Enter something you want for Christmas!</h1>
+		<form id = "newGift" ng-submit="addGift()">
+			Item:<input type ="text" ng-model="Item" value=""><br>
+			Image:<input type="url" ng-model="Url" value=""><br>
+			<input type="submit" value ="Submit">
+		</form>
+
+		<ul ng-if='gifts.length' class= 'list center stretch'>
+			<li ng-repeat='g in gifts' class = 'gifts'>
+				<h1> {{g.Item}}</h1>
+				<img class = 'avatar' ng-src="{{g.Image}}"/>
+			</li>
+		</ul>	
+	</div>
+
+</body>
+</html> 
+
+
