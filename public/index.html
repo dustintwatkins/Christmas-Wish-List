@@ -15,14 +15,16 @@
 		<h1 class = "title">Enter something you want for Christmas!</h1>
 		<form id = "newGift" ng-submit="addGift()">
 			<h2>Name of item:</h2><input type ="text" class = "input"  ng-model="Item" value=""><br>
-			<h2>Image:</h2><input type="url" class = "input"  ng-model="Url" value=""><br>
+			<h2>Image Url:</h2><input type="url" class = "input"  ng-model="Url" value=""><br>
+		
 			<input type="submit" value ="Submit">
 		</form>
 
 		<ul ng-if='gifts.length' class= 'list center stretch'>
 			<li ng-repeat='g in gifts' class = 'gifts'>
 				<h1 class = list><span class = "glyphicon glyphicon-remove" ng-click="delete(g)"></span> {{g.Item}}</h1>
-				<img class = 'avatar' ng-src="{{g.Image}}"/>
+				<img class = 'avatar' ng-src="{{g.Image}}" alt = "" />
+			
 			</li>
 		</ul>	
 	</div>
