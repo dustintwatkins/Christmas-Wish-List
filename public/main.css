@@ -1,0 +1,34 @@
+html, body, #app {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: helvetica;
+  background-image: url("https://wallpapersite.com/images/wallpapers/merry-christmas-2560x1600-santa-claus-snowman-hd-3806.jpg");
+  background-size:100%;
+  background-repeat: no-repeat;
+  background-atachment:;
+}
+
+div, ul{
+	margin:20px;
+	padding:0;
+	list-style:none;
+}
+
+.stretch{
+	width:100%;
+	height:100%;
+}
+
+.center{
+
+	
+}
+
+.avatar{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+}
+
