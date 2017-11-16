@@ -10,6 +10,24 @@ html, body, #app {
   background-atachment:;
 }
 
+.title{
+	margin-top:25px;
+	color:white;
+	text-align: center;
+}
+
+.input{
+	text-align:center;
+	align:center;
+}
+
+#newGift{
+	text-align:center;
+}
+h2{
+	text-align:center;
+	color:white;
+}
 div, ul{
 	margin:20px;
 	padding:0;
@@ -22,10 +40,12 @@ div, ul{
 }
 
 .center{
-
-	
+	display: inline-flex;	
 }
 
+.gifts{
+	padding:20px;
+}
 .avatar{
 	width: 100px;
 	height: 100px;

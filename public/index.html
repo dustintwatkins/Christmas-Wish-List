@@ -11,16 +11,16 @@
 
 <body>	
 	<div id ='app' ng-app='app' ng-controller='mainCtrl'>
-		<h1>Enter something you want for Christmas!</h1>
+		<h1 class = "title">Enter something you want for Christmas!</h1>
 		<form id = "newGift" ng-submit="addGift()">
-			Item:<input type ="text" ng-model="Item" value=""><br>
-			Image:<input type="url" ng-model="Url" value=""><br>
+			<h2>Item:</h2><input type ="text" class = "input"  ng-model="Item" value=""><br>
+			<h2>Image:</h2><input type="url" class = "input"  ng-model="Url" value=""><br>
 			<input type="submit" value ="Submit">
 		</form>
 
 		<ul ng-if='gifts.length' class= 'list center stretch'>
 			<li ng-repeat='g in gifts' class = 'gifts'>
-				<h1> {{g.Item}}</h1>
+				<h1 class = list> {{g.Item}}</h1>
 				<img class = 'avatar' ng-src="{{g.Image}}"/>
 			</li>
 		</ul>	
