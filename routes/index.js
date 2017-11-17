@@ -27,6 +27,16 @@ router.post('/gift', function(req, res){
   res.end('{"success" : "Updated Successfully", "status" : 200}');
 });
 
+router.param('gift', function(req, res, next, id) {
+  var query = gift.findById(id);
+  query.exec(function (err, comment){
+    if (err) { return next(err); }
+    if (!gift) { return next(new Error("can't find gift")); }
+    req.gift = gift;
+    return next();
+  });
+});
+
 router.get('/gift', function(req,res){
 	console.log("in gift route");
 	res.send(gift);
