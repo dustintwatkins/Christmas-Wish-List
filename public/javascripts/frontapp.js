@@ -23,6 +23,17 @@ function giftFetch($http){
 	}
 }
 
+
+var urlArray = [
+"https://americannegotiationinstitute.com/wp-content/uploads/2016/12/gift-06.jpg",
+"https://media2.giphy.com/media/kKo2x2QSWMNfW/giphy.gif",
+"https://media0.giphy.com/media/6gT5hWNOZxkVq/200w.webp#4-grid1",
+"https://media.makeameme.org/created/buys-girlfriend-christmas.jpg",
+"http://i39.tinypic.com/122p94g.jpg",
+"https://i.imgflip.com/vfvzv.jp"
+];
+
+
 function mainCtrl ($scope, giftFetch){
 	$scope.gifts = []
 
@@ -32,9 +43,10 @@ function mainCtrl ($scope, giftFetch){
 		})
 		$scope.addGift = function(){
 			var url = $scope.Url;	
+			var i = Math.floor((Math.random()*5)+0);
 			console.log("url: " + url);
-			if(typeof url == "undefined"){ url ="https://americannegotiationinstitute.com/wp-content/uploads/2016/12/gift-06.jpg"} 
-			if(url == ""){url ="https://americannegotiationinstitute.com/wp-content/uploads/2016/12/gift-06.jpg"}
+			if(typeof url == "undefined"){ url=urlArray[i]};
+			if(url == ""){url = urlArray[i];}
 			console.log("url: " + url);
 			var formData = {Item:$scope.Item,Image:url};
 			console.log(formData);
@@ -50,3 +62,12 @@ function mainCtrl ($scope, giftFetch){
 	$scope.getAll();
 	};
 }
+/*
+var urlArray[
+"https://americannegotiationinstitute.com/wp-content/uploads/2016/12/gift-06.jpg",
+"https://media2.giphy.com/media/kKo2x2QSWMNfW/giphy.gif",
+"https://media0.giphy.com/media/6gT5hWNOZxkVq/200w.webp#4-grid1",
+"https://media.makeameme.org/created/buys-girlfriend-christmas.jpg",
+"http://i39.tinypic.com/122p94g.jpg",
+"https://i.imgflip.com/vfvzv.jp"
+];*/
